@@ -1,0 +1,85 @@
+@import '../../node_modules/node-reset-scss/scss/reset';
+
+$line-height: 1.2em;
+
+// GLOBAL
+body {
+    cursor: url('../img/Default.png') 9 3, auto;
+    cursor: -webkit-image-set(
+        url('../img/Default.png') 1x,
+        url('../img/Default@2x.png') 2x
+    ) 9 3, auto;
+    font-family: Arial, sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: -.025em;
+    line-height: $line-height;
+    padding: 30px;
+}
+
+::selection {
+    background-color: #000;
+    color: #fff;
+}
+
+main {
+    max-width: 1366px;
+}
+
+.inline {
+    display: inline-block;
+}
+
+h1, h2, p, ul {
+    margin-bottom: $line-height;
+}
+
+h1, h2, p, ul, h3 {
+    cursor: url('../img/Text.png') 15 33, auto;
+    cursor: -webkit-image-set(
+        url('../img/Text.png') 1x,
+        url('../img/Text@2x.png') 2x
+    ) 15 33, auto;
+}
+
+a, a:visited, a:link {
+    color: #000;
+    cursor: url('../img/Pointer.png') 20 3, auto;
+    cursor: -webkit-image-set(
+        url('../img/Pointer.png') 1x,
+        url('../img/Pointer@2x.png') 2x
+    ) 20 3, auto;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &.visited {
+        text-decoration: line-through;
+    }
+}
+
+a[href^="mailto"] {
+    text-decoration: underline;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+
+// COMMA LIST
+.comma-list li {
+    display: inline;
+
+    &:after {
+        content: ",";
+    }
+
+    &:last-child {
+        &:after {
+            content: none;
+        }
+    }
+}

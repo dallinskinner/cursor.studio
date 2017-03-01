@@ -1,0 +1,33 @@
+{
+  "name": "cursor.studio",
+  "version": "1.0.0",
+  "description": "Website for Cursor web development studio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run clean && npm run js && npm run copy && npm run css",
+    "clean": "rm -rf dist && mkdir dist",
+    "copy": "npm run copy:img && npm run copy:html",
+    "copy:html": "cp -R src/html/ dist/",
+    "copy:img": "cp -R src/img/ dist/img/",
+    "css": "node-sass src/scss/style.scss -o dist/css/ --output-style compressed",
+    "css:watch": "npm run css && node-sass src/scss/style.scss -wo dist/css/ --output-style compressed",
+    "deploy": "npm run build && cd dist/; scp -r . dallin:/webapps/cursor.studio",
+    "js": "mkdir dist/js && node_modules/uglify-js/bin/uglifyjs src/js/scripts.js -c > dist/js/scripts.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dallinskinner/cursor.studio.git"
+  },
+  "author": "Dallin Skinner (Cursor)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dallinskinner/cursor.studio/issues"
+  },
+  "homepage": "https://github.com/dallinskinner/cursor.studio#readme",
+  "devDependencies": {
+    "node-reset-scss": "^1.0.1",
+    "node-sass": "^4.5.0",
+    "uglify-js": "^2.8.4"
+  }
+}
