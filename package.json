@@ -12,7 +12,7 @@
     "copy:img": "cp -R src/img/ dist/img/",
     "css": "node-sass src/scss/style.scss -o dist/css/ --output-style compressed",
     "css:watch": "npm run css && node-sass src/scss/style.scss -wo dist/css/ --output-style compressed",
-    "deploy": "npm run build && cd dist/; scp -r . dallin:/webapps/cursor.studio",
+    "deploy": "npm run build && cd dist/; scp -r . serverpilot@cursor.studio:~/apps/cursor-website/public",
     "js": "mkdir dist/js && node_modules/uglify-js/bin/uglifyjs src/js/scripts.js -c > dist/js/scripts.min.js"
   },
   "repository": {
